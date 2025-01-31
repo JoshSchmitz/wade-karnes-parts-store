@@ -62,12 +62,12 @@ const Nav = ({ location }) => {
         {location === 'footer' && (
           <li className='nav-list-item'>
             <Link
-              to={
-                currentItem === 'Home'
-                  ? '/'
-                  : `/${currentItem.toString().toLowerCase()}`
+              to={userInfo ? '/profile' : '/'}
+              onClick={() =>
+                userInfo
+                  ? dispatch(newCurrentItem(name))
+                  : dispatch(handleOpen(!isOpen))
               }
-              onClick={() => dispatch(handleOpen(!isOpen))}
             >
               {userInfo ? 'Profile' : 'Sign In'}
             </Link>
