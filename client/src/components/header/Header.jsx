@@ -5,7 +5,7 @@ const Header = () => {
     <header>
       <div className='container'>
         <div className='logo'>
-          <h1>Project Title</h1>
+          <h1>Karnzy Components</h1>
         </div>
         <Nav location='header' />
       </div>
