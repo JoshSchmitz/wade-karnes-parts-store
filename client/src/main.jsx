@@ -10,6 +10,10 @@ import {
 // import css
 import './css/main.min.css';
 
+// import react-redux toolkit store
+import { Provider } from 'react-redux';
+import store from './store/store.js';
+
 // import components
 import App from './components/App.jsx';
 
@@ -34,7 +38,9 @@ const router = createBrowserRouter(
 );
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+  <Provider store={store}>
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  </Provider>
 );
