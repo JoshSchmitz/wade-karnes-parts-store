@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 const initialState = {
   navItems: [
     { _id: nanoid(), name: 'Home' },
-    { _id: nanoid(), name: 'Resume' },
+    { _id: nanoid(), name: 'Product' },
     { _id: nanoid(), name: 'Contact' },
   ],
   currentItem: 'Home',
