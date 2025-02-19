@@ -8,13 +8,24 @@ import { ConfigProvider, Layout, Flex, Menu, Space } from 'antd';
 // import icons
 // import { UserOutlined, LoginOutlined } from '@ant-design/icons';
 
-// import navigation items
-import { items } from '../assets/config/navigation';
-
 // theme
 import { theme } from 'antd';
 
 const { Header, Content, Footer } = Layout;
+const navItems = [
+  {
+    label: 'Home',
+    key: '/',
+  },
+  {
+    label: 'Products',
+    key: 'products',
+  },
+  {
+    label: 'Contact',
+    key: 'contact',
+  },
+];
 
 function App() {
   // config
@@ -40,7 +51,13 @@ function App() {
     // }}
     >
       <div className='App'>
-        <Layout>
+        <Layout
+          style={{
+            display: 'flex',
+            minHeight: '100vh',
+            flexDirection: 'column',
+          }}
+        >
           <Header
             style={{
               height: 'auto',
@@ -54,8 +71,7 @@ function App() {
                   onClick={menuClick}
                   selectedKeys={[current]}
                   mode='horizontal'
-                  items={items}
-                  // theme='dark'
+                  items={navItems}
                 />
                 <Authenticate />
               </Space>
@@ -63,6 +79,7 @@ function App() {
           </Header>
           <Content
             style={{
+              flex: 1,
               marginTop: '24px',
               padding: '0 50px',
             }}

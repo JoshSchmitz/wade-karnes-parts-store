@@ -16,12 +16,19 @@ import {
 const { Title, Paragraph, Text, Link } = Typography;
 
 // import icons
-import { UserOutlined, LoginOutlined } from '@ant-design/icons';
+import {
+  UserOutlined,
+  LoginOutlined,
+  MailOutlined,
+  LockOutlined,
+} from '@ant-design/icons';
 
 // import state
 import { setCredentials } from '../store/slices/auth/auth';
-import { useLoginMutation } from '../store/slices/auth/api-auth';
-import { useRegisterMutation } from '../store/slices/auth/api-auth';
+import {
+  useLoginMutation,
+  useRegisterMutation,
+} from '../store/slices/auth/api-auth';
 
 const Authenticate = () => {
   // config
@@ -30,7 +37,6 @@ const Authenticate = () => {
   const [messageApi, contextHolder] = message.useMessage();
 
   // state
-  //   const [open, setOpen] = useState(false);
   const [loginPage, setLoginPage] = useState(true);
   const [open, setOpen] = useState(false);
   const { userInfo } = useSelector((state) => state.auth);
@@ -98,35 +104,23 @@ const Authenticate = () => {
   };
 
   const loginForm = (
-    <Space direction='vertical' size='large' style={{ textAlign: 'center' }}>
+    <Space
+      direction='vertical'
+      size='large'
+      style={{ textAlign: 'center', width: 300 }}
+    >
       <Flex justify='space-between' align='center'>
         <Title level={4} style={{ margin: 0 }}>
           Sign In
         </Title>
-        {/* 
-        <Button
-          shape='circle'
-          color='default'
-          variant='filled'
-          size='large'
-          icon={<LogoutOutlined />}
-        ></Button> 
-        */}
       </Flex>
-      <Paragraph style={{ maxWidth: 250, margin: 'auto' }}>
+      <Paragraph style={{ margin: 'auto' }}>
         Sign in to your account using your email address.
       </Paragraph>
       <Form
         name='login'
-        labelCol={{
-          span: 8,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
         colon={false}
         style={{
-          width: 350,
           textAlign: 'right',
         }}
         onFinish={loginFinish}
@@ -134,7 +128,6 @@ const Authenticate = () => {
         autoComplete='off'
       >
         <Form.Item
-          label='Email'
           name='email'
           hasFeedback
           rules={[
@@ -148,10 +141,9 @@ const Authenticate = () => {
             },
           ]}
         >
-          <Input />
+          <Input prefix={<MailOutlined />} placeholder='Email' />
         </Form.Item>
         <Form.Item
-          label='Password'
           name='password'
           rules={[
             {
@@ -160,7 +152,7 @@ const Authenticate = () => {
             },
           ]}
         >
-          <Input.Password />
+          <Input.Password prefix={<LockOutlined />} placeholder='Password' />
         </Form.Item>
         <Form.Item label={null} style={{ marginBottom: 0 }}>
           <Button type='primary' htmlType='submit' loading={loginLoading}>
@@ -175,35 +167,23 @@ const Authenticate = () => {
   );
 
   const registerForm = (
-    <Space direction='vertical' size='large' style={{ textAlign: 'center' }}>
+    <Space
+      direction='vertical'
+      size='large'
+      style={{ textAlign: 'center', width: 300 }}
+    >
       <Flex justify='space-between' align='center'>
         <Title level={4} style={{ margin: 0 }}>
           Sign Up
         </Title>
-        {/* 
-        <Button
-          shape='circle'
-          color='default'
-          variant='filled'
-          size='large'
-          icon={<LogoutOutlined />}
-        ></Button> 
-        */}
       </Flex>
-      <Paragraph style={{ maxWidth: 250, margin: 'auto' }}>
+      <Paragraph style={{ margin: 'auto' }}>
         Sign up with your email address.
       </Paragraph>
       <Form
         name='register'
-        labelCol={{
-          span: 8,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
         colon={false}
         style={{
-          width: 350,
           textAlign: 'right',
         }}
         onFinish={registerFinish}
@@ -211,14 +191,12 @@ const Authenticate = () => {
         autoComplete='off'
       >
         <Form.Item
-          label='Name'
           name='name'
           rules={[{ required: true, message: 'Please input you name!' }]}
         >
-          <Input />
+          <Input prefix={<UserOutlined />} placeholder='Name' />
         </Form.Item>
         <Form.Item
-          label='Email'
           name='email'
           rules={[
             {
@@ -231,10 +209,9 @@ const Authenticate = () => {
             },
           ]}
         >
-          <Input />
+          <Input prefix={<MailOutlined />} placeholder='Email' />
         </Form.Item>
         <Form.Item
-          label='Password'
           name='password'
           hasFeedback
           rules={[
@@ -244,10 +221,9 @@ const Authenticate = () => {
             },
           ]}
         >
-          <Input.Password />
+          <Input.Password prefix={<LockOutlined />} placeholder='Password' />
         </Form.Item>
         <Form.Item
-          label='Confirm Pass'
           name='confirmpassword'
           dependencies={['password']}
           hasFeedback
@@ -268,7 +244,10 @@ const Authenticate = () => {
             }),
           ]}
         >
-          <Input.Password />
+          <Input.Password
+            prefix={<LockOutlined />}
+            placeholder='Confirm Password'
+          />
         </Form.Item>
         <Form.Item label={null} style={{ marginBottom: 0 }}>
           <Button type='primary' htmlType='submit' loading={registerLoading}>
@@ -295,6 +274,7 @@ const Authenticate = () => {
         placement='bottomRight'
         open={open}
         onOpenChange={handleOpenChange}
+        style={{ width: 300 }}
       >
         <Button
           shape='circle'
