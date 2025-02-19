@@ -12,6 +12,7 @@ import {
   Form,
   Input,
   Button,
+  Tooltip,
   message,
 } from 'antd';
 const { Title, Paragraph } = Typography;
@@ -93,14 +94,16 @@ const ProfilePage = () => {
                 <Title level={4} style={{ margin: 0 }}>
                   {userInfo.name}
                 </Title>
-                <Button
-                  shape='circle'
-                  color='default'
-                  variant='filled'
-                  size='large'
-                  icon={<LogoutOutlined />}
-                  onClick={logoutFinish}
-                ></Button>
+                <Tooltip title='Log Out'>
+                  <Button
+                    shape='circle'
+                    color='default'
+                    variant='filled'
+                    size='large'
+                    icon={<LogoutOutlined />}
+                    onClick={logoutFinish}
+                  />
+                </Tooltip>
               </Flex>
               <Paragraph style={{ margin: 'auto' }}>
                 Update your profile information

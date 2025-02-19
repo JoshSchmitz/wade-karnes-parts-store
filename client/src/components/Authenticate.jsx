@@ -11,6 +11,7 @@ import {
   Button,
   Flex,
   Space,
+  Tooltip,
   message,
 } from 'antd';
 const { Title, Paragraph, Text, Link } = Typography;
@@ -276,15 +277,17 @@ const Authenticate = () => {
         onOpenChange={handleOpenChange}
         style={{ width: 300 }}
       >
-        <Button
-          shape='circle'
-          color='default'
-          // ghost
-          variant='filled'
-          size='large'
-          icon={userInfo ? <UserOutlined /> : <LoginOutlined />}
-          onClick={userInfo && authClick}
-        />
+        <Tooltip title={userInfo ? 'Profile' : 'Log In'}>
+          <Button
+            shape='circle'
+            color='default'
+            // ghost
+            variant='filled'
+            size='large'
+            icon={userInfo ? <UserOutlined /> : <LoginOutlined />}
+            onClick={userInfo && authClick}
+          />
+        </Tooltip>
       </Popover>
     </>
   );
