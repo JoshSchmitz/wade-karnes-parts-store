@@ -1,0 +1,107 @@
+{
+  "components": [
+    {
+      "_id": { "$oid": "67b79eec27b7b86fd22ff33e" },
+      "sku": "",
+      "name": "Plate One",
+      "description": {
+        "description": "A metal plate with holes in it.",
+        "type": "plate",
+        "material": "Aluminum",
+        "dimensions": {
+          "width": 15,
+          "length": 15,
+          "thickness": 3
+        },
+        "holes": [
+          {
+            "size": 2,
+            "location": "Top Left",
+            "distance": {
+              "fromTop": 3,
+              "fromBottom": 12,
+              "fromLeft": 3,
+              "fromRight": 12
+            }
+          },
+          {
+            "size": 2,
+            "location": "Top Right",
+            "distance": {
+              "fromTop": 3,
+              "fromBottom": 12,
+              "fromLeft": 12,
+              "fromRight": 3
+            }
+          },
+          {
+            "size": 2,
+            "location": "Bottom Left",
+            "distance": {
+              "fromTop": 12,
+              "fromBottom": 3,
+              "fromLeft": 3,
+              "fromRight": 12
+            }
+          },
+          {
+            "size": 2,
+            "location": "Bottom Right",
+            "distance": {
+              "fromTop": 12,
+              "fromBottom": 3,
+              "fromLeft": 12,
+              "fromRight": 3
+            }
+          }
+        ]
+      },
+      "category": "Plate"
+    },
+    {
+      "_id": { "$oid": "67b7a6a027b7b86fd22ff342" },
+      "sku": "",
+      "name": "Nut One",
+      "description": {
+        "description": "A nut for fastening to a bolt.",
+        "type": "nut",
+        "material": "Steel",
+        "dimensions": {
+          "width": 7,
+          "length": 7,
+          "thickness": 3
+        },
+        "holes": [
+          {
+            "size": 4,
+            "location": "Center",
+            "distance": {
+              "fromTop": 1.5,
+              "fromBottom": 1.5,
+              "fromLeft": 1.5,
+              "fromRight": 1.5
+            }
+          }
+        ]
+      },
+      "category": "Nut"
+    },
+    {
+      "_id": { "$oid": "67b7a72c27b7b86fd22ff343" },
+      "sku": "",
+      "name": "Plate Two",
+      "description": {
+        "description": "A metal plate.",
+        "type": "plate",
+        "material": "Steel",
+        "dimensions": {
+          "width": 20,
+          "length": 35,
+          "thickness": 10
+        },
+        "holes": []
+      },
+      "category": "Plate"
+    }
+  ]
+}

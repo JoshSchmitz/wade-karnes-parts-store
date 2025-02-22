@@ -17,6 +17,23 @@ const userSchema = mongoose.Schema(
       required: true,
     },
     admin: { type: Boolean, default: false },
+    cart: {
+      status: { type: String, default: 'active' },
+      products: [
+        {
+          _id: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'Product',
+          },
+          name: { type: String, required: true },
+          price: { type: Number, required: true },
+          quantity: { type: Number, required: true },
+        },
+      ],
+      quantity: { type: Number, default: 0 },
+      total: { type: Number, default: 0 },
+    },
   },
   { timestamps: true }
 );
