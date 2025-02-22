@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 // import components
 import Authenticate from './Authenticate';
+import Cart from './Cart';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { ConfigProvider, Layout, Flex, Menu, Space } from 'antd';
 
@@ -74,6 +75,7 @@ function App() {
                   items={navItems}
                 />
                 <Authenticate />
+                <Cart />
               </Space>
             </Flex>
           </Header>
